@@ -1,4 +1,4 @@
 # Django-pollingApp
 Polling App
 
-a little change.(test)
+a little change test
