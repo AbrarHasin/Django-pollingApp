@@ -4,7 +4,7 @@ from .models import Question, Choice
 # Register your models here 
 class ChoiceInline(admin.TabularInline):
     model = Choice
-    extra = 3
+    extra = 3       #number of choices to show
 
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -12,5 +12,6 @@ class QuestionAdmin(admin.ModelAdmin):
         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
     inlines = [ChoiceInline]
+    list_display = ('question_text', 'pub_date','was_published_recently') 
     
 admin.site.register(Question, QuestionAdmin)
